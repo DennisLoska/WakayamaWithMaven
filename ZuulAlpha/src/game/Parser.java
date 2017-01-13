@@ -68,6 +68,8 @@ public class Parser {
                 return new CommandEat(word1, word2);
             case "look":
                 return new CommandLook(word1, word2);
+            case "back":
+                return new CommandBack(word1, word2);
             default:
                 return new CommandUnknown(word1, word2);
         }

@@ -8,6 +8,7 @@ public class GameState {
     private String lastOutput;
     private Room nextRoom;
     private Room currentRoom;
+    private Room lastRoom;
     private static GameState state = new GameState();
 
     private GameState() {
@@ -36,6 +37,15 @@ public class GameState {
 
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
+    }
+
+
+    public Room getLastRoom() {
+        return lastRoom;
+    }
+
+    public void setLastRoom(Room lastRoom) {
+        this.lastRoom = lastRoom;
     }
 
     public static GameState getInstance() {

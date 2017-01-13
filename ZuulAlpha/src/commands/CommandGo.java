@@ -27,6 +27,7 @@ public class CommandGo extends Command {
         Room next = state.getCurrentRoom().getExitsRoom(direction);
         state.setNextRoom(next);
         Room nextRoom = state.getNextRoom();
+        state.setLastRoom(state.getCurrentRoom());
         String result = "";
         if (nextRoom == null) {
             result += "There is no door!";

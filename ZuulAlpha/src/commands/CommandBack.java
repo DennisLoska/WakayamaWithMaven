@@ -16,8 +16,8 @@ public class CommandBack extends Command {
 
     @Override
     public String processCommand(Command command) {
-        if (!(command.getSecondWord() == null)) {
-            state.setCurrentRoom();
+        if (command.getSecondWord() == null) {
+            state.setCurrentRoom(state.getLastRoom());
             return "You are now back in " + state.getCurrentRoom().getDescription();
         } else return "Type in 'back' without any more words";
     }
