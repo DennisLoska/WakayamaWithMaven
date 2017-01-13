@@ -7,7 +7,7 @@ public class ItemBattery extends Item {
 
     private double batteryLife = 100.00;
 
-    private ItemBattery(Double weight, String name, String describtion) {
+    public ItemBattery(Double weight, String name, String describtion) {
         super(weight, name, describtion);
     }
 
@@ -18,6 +18,5 @@ public class ItemBattery extends Item {
     public void setBatteryLife(double batteryLife) {
         this.batteryLife = batteryLife;
     }
-
 
 }

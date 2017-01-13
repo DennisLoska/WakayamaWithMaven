@@ -5,19 +5,19 @@ package game;
  */
 public class ItemFlashlight extends Item {
 
-    private boolean isCharged = true;
+    private boolean charged = true;
 
-    private ItemFlashlight(Double weight, String name, String describtion) {
+    public ItemFlashlight(Double weight, String name, String describtion, Boolean charged) {
        super(weight, name, describtion);
-
+        this.charged = charged;
     }
 
     public boolean isCharged() {
-        return isCharged;
+        return charged;
     }
 
     private void setCharged(boolean charged) {
-        isCharged = charged;
+        this.charged = charged;
     }
 
     public void changeBatteries(ItemBattery battery){
