@@ -9,20 +9,23 @@ import game.Item;
 public class CommandTake extends Command {
 
     private GameState state;
+    private Item item;
 
     public CommandTake() {
 
     }
 
-    public CommandTake(String word1, String word2) {
-        super(word1, word2);
+    public CommandTake(String word1, Item item) {
+        super(word1, item);
+        this.item=item;
         state = GameState.getInstance();
+
     }
 
     @Override
     public String processCommand(Command command) {
-        return null;
+        state.getCurrentRoom().removeItem(item.getName());
+        return "You now have this: " + item.getDescribtion();
     }
-
 
 }

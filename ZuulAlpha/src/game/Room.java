@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class game.Room - a room in an adventure game.
@@ -20,7 +21,7 @@ import java.util.HashMap;
 public class Room {
     private String description;
     private HashMap<String, Room> exits = new HashMap<String, Room>();
-    private ArrayList<Item> items = new ArrayList<>();
+    private static HashMap<String, Item> roomItems = new HashMap<String, Item>();
 
     /**
      * Create a room described "description". Initially, it has
@@ -32,6 +33,14 @@ public class Room {
     public Room(String description) {
         this.description = description;
         Item.getInstance().fillCollection();
+    }
+
+    public HashMap<String, Item> getRoomItems() {
+        return roomItems;
+    }
+
+    public void setRoomItems(HashMap<String, Item> roomItems) {
+        Room.roomItems = roomItems;
     }
 
     /**
@@ -63,7 +72,7 @@ public class Room {
      * @return The description of the room.
      */
     public String getDescription() {
-        if (!(items.size() < 1))
+        if (!(roomItems.size() < 1))
             return description + " There might be an item somewhere around here.";
         else
             return description;
@@ -75,8 +84,11 @@ public class Room {
      */
     public String getItemDescriptions() {
         String result = "";
-        for (int i = 0; i < items.size(); i++) {
-            result += items.get(i).getDescribtion() + "\n";
+        for(Map.Entry<String, Item> entry : roomItems.entrySet()) {
+            String key = entry.getKey();
+            Item value = entry.getValue();
+
+            result += value.getDescribtion() + "\n";
         }
         return result;
     }
@@ -86,6 +98,11 @@ public class Room {
      * @param key
      */
     public void addItem(String key) {
-        items.add(Item.getInstance().getItemCollection().get(key));
+        roomItems.put(key, Item.getInstance().getItemCollection().get(key));
     }
+
+    public void removeItem(String key){
+        roomItems.remove(key, Item.getInstance().getItemCollection().get(key));
+    }
+
 }

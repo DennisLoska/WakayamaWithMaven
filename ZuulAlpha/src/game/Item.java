@@ -9,15 +9,16 @@ public class Item {
     private Double weight;
     private String describtion;
     private String name;
+    private boolean canBePickedUp = true;
     private static HashMap<String, Item> itemCollection = new HashMap<String, Item>();
     private static Item item = new Item();
     private static Item scroll = new Item(0.3, "scroll", "There is a scroll.");
     private static Item key = new Item(0.1, "key", "It is some sort of a key.");
     private static Item apple = new Item(0.4, "apple", "It is an apple - it should taste good.");
     private static Item defaultItem = new Item("");
-    private static Item battery = new ItemBattery(0.1,"battery","a battery - can charge a flashlight");
-    private static Item food = new ItemFood(0.8,"food","some food to eat","deleicous");
-    private static Item flashlight = new ItemFlashlight(1.3,"flashlight", "a flashlight to see in the dark", true);
+    private static Item battery = new ItemBattery(0.1, "battery", "a battery - can charge a flashlight");
+    private static Item food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
+    private static Item flashlight = new ItemFlashlight(1.3, "flashlight", "a flashlight to see in the dark", true);
 
     public Item() {
 
@@ -27,7 +28,7 @@ public class Item {
         this.describtion = describtion;
     }
 
-    public Item(Double weight, String name, String describtion) {
+    private Item(Double weight, String name, String describtion) {
         this.weight = weight;
         this.name = name;
         this.describtion = describtion;
@@ -87,6 +88,14 @@ public class Item {
 
     public static void setFlashLight(Item flashLight) {
         Item.flashlight = flashLight;
+    }
+
+    public boolean isCanBePickedUp() {
+        return canBePickedUp;
+    }
+
+    public void setCanBePickedUp(boolean canBePickedUp) {
+        this.canBePickedUp = canBePickedUp;
     }
 
     public void fillCollection() {

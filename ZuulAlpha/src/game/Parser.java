@@ -73,6 +73,9 @@ public class Parser {
                 return new CommandLook(word1, word2);
             case "back":
                 return new CommandBack(word1, word2);
+            case "take":
+                Item item = GameState.getInstance().getCurrentRoom().getRoomItems().get(word2);
+                return new CommandTake(word1, item);
             default:
                 return new CommandUnknown(word1, word2);
         }
