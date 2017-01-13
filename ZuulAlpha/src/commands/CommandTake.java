@@ -19,10 +19,10 @@ public class CommandTake extends Command {
         state = GameState.getInstance();
     }
 
-    public String processCommand(Command command, Item item) {
-        if (!command.hasSecondWord()) {
-            return "";
-        }
-        return "";
+    @Override
+    public String processCommand(Command command) {
+        return null;
     }
+
+
 }
