@@ -24,7 +24,7 @@ public class Item {
         this.describtion = describtion;
     }
 
-    private Item(Double weight, String name, String describtion) {
+    public Item(Double weight, String name, String describtion) {
         this.weight = weight;
         this.name = name;
         this.describtion = describtion;
