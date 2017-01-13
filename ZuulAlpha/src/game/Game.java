@@ -99,6 +99,7 @@ public class Game {
 
         state.setCurrentRoom(templeEntrance);  // start game inside the temple entrance
         state.setLastRoom(templeEntrance);
+        state.getLastRooomStack().push(templeEntrance);
     }
 
     /**

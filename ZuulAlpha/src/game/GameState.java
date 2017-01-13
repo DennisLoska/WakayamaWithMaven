@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Stack;
+
 /**
  * Created by Dennis on 10.01.2017.
  * This class is an implementation of the singleton design-pattern
@@ -9,10 +11,19 @@ public class GameState {
     private Room nextRoom;
     private Room currentRoom;
     private Room lastRoom;
+    private Stack lastRooomStack = new Stack();
     private static GameState state = new GameState();
 
     private GameState() {
 
+    }
+
+    public Stack getLastRooomStack() {
+        return lastRooomStack;
+    }
+
+    public void setLastRooomStack(Stack lastRooomStack) {
+        this.lastRooomStack = lastRooomStack;
     }
 
     public String getLastOutput() {

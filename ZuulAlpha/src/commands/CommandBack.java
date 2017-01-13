@@ -1,6 +1,7 @@
 package commands;
 
 import game.GameState;
+import game.Room;
 
 /**
  * Created by Dennis on 13.01.2017.
@@ -17,7 +18,7 @@ public class CommandBack extends Command {
     @Override
     public String processCommand(Command command) {
         if (command.getSecondWord() == null) {
-            state.setCurrentRoom(state.getLastRoom());
+            state.setCurrentRoom(((Room)state.getLastRooomStack().pop())); //downcasting from Object to Room
             return "You are now back in " + state.getCurrentRoom().getDescription();
         } else return "Type in 'back' without any more words";
     }
