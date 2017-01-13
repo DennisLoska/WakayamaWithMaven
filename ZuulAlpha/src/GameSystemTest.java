@@ -183,7 +183,7 @@ public class GameSystemTest {
     @Test
     public void goBackAtGameStart(){
         String result = game.processCommand("back");
-        assertTrue(result.contains("the temple entrance"));
+        assertTrue(result.contains("at the temple entrance"));
     }
 
     @Test

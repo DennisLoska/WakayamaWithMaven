@@ -98,6 +98,7 @@ public class Game {
         room_c.addItem("scroll");
 
         state.setCurrentRoom(templeEntrance);  // start game inside the temple entrance
+        state.setLastRoom(templeEntrance);
     }
 
     /**
