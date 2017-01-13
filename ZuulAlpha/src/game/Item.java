@@ -17,7 +17,7 @@ public class Item {
     private static Item defaultItem = new Item("");
     private static Item battery = new ItemBattery(0.1,"battery","a battery - can charge a flashlight");
     private static Item food = new ItemFood(0.8,"food","some food to eat","deleicous");
-    private static Item flashLight = new ItemFlashlight(1.3,"flashlight", "a flashlight to see in the dark", true);
+    private static Item flashlight = new ItemFlashlight(1.3,"flashlight", "a flashlight to see in the dark", true);
 
     public Item() {
 
@@ -82,11 +82,11 @@ public class Item {
     }
 
     public static Item getFlashLight() {
-        return flashLight;
+        return flashlight;
     }
 
     public static void setFlashLight(Item flashLight) {
-        Item.flashLight = flashLight;
+        Item.flashlight = flashLight;
     }
 
     public void fillCollection() {
@@ -94,6 +94,9 @@ public class Item {
         itemCollection.put("default", defaultItem);
         itemCollection.put("key", key);
         itemCollection.put("apple", apple);
+        itemCollection.put("battery", battery);
+        itemCollection.put("food", food);
+        itemCollection.put("flashlight", flashlight);
     }
 
     public static Item getInstance() {
