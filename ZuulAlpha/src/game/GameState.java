@@ -22,10 +22,6 @@ public class GameState {
         return lastRooomStack;
     }
 
-    public void setLastRooomStack(Stack lastRooomStack) {
-        this.lastRooomStack = lastRooomStack;
-    }
-
     public String getLastOutput() {
         return lastOutput;
     }
@@ -48,11 +44,6 @@ public class GameState {
 
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
-    }
-
-
-    public Room getLastRoom() {
-        return lastRoom;
     }
 
     public void setLastRoom(Room lastRoom) {

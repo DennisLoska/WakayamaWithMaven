@@ -96,7 +96,7 @@ public class Game {
         library.addItem("apple");
         atelier.addItem("scroll");
         room_c.addItem("scroll");
-
+        //setting initial gamestate
         state.setCurrentRoom(templeEntrance);  // start game inside the temple entrance
         state.setLastRoom(templeEntrance);
         state.getLastRooomStack().push(templeEntrance);
