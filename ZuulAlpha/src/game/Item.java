@@ -11,6 +11,8 @@ public class Item {
     private String name;
     private boolean canBePickedUp = true;
     private static HashMap<String, Item> itemCollection = new HashMap<String, Item>();
+    private static HashMap<String, Item> playerInventory = new HashMap<String, Item>();
+
     private static Item item = new Item();
     private static Item scroll = new Item(0.3, "scroll", "There is a scroll.");
     private static Item key = new Item(0.1, "key", "It is some sort of a key.");
@@ -28,7 +30,7 @@ public class Item {
         this.describtion = describtion;
     }
 
-    Item(Double weight, String name, String describtion) {
+    public Item(Double weight, String name, String describtion) {
         this.weight = weight;
         this.name = name;
         this.describtion = describtion;
@@ -60,6 +62,10 @@ public class Item {
 
     public HashMap<String, Item> getItemCollection() {
         return itemCollection;
+    }
+
+    public static HashMap<String, Item> getPlayerInventory() {
+        return playerInventory;
     }
 
     public Item getDefaultItem() {

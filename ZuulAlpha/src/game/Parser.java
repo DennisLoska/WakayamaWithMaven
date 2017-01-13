@@ -60,6 +60,7 @@ public class Parser {
         if (word1 == null){
             word1 = " ";
         }
+        Item item = GameState.getInstance().getCurrentRoom().getRoomItems().get(word2);
         switch (word1) {
             case "help":
                 return new CommandHelp(word1, word2);
@@ -73,8 +74,9 @@ public class Parser {
                 return new CommandLook(word1, word2);
             case "back":
                 return new CommandBack(word1, word2);
+            case "drop":
+                return new CommandDrop(word1, item);
             case "take":
-                Item item = GameState.getInstance().getCurrentRoom().getRoomItems().get(word2);
                 return new CommandTake(word1, item);
             default:
                 return new CommandUnknown(word1, word2);
