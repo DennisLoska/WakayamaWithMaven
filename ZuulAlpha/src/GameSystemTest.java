@@ -106,7 +106,7 @@ public class GameSystemTest {
         goAndSee("west", "hallway");
         goAndSee("down", "library");
         goAndSee("west", "temple entrance");
-        goAndSee("south", "this wall looks suspicious");
+        goAndSee("south", "looks suspicious");
         goAndSee("north", "temple entrance");
         goAndSee("west", "toilets");
         goAndSee("down", "cellar");
