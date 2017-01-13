@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=word
+comment0.target=commands.CommandWord(java.lang.String)
+comment0.text=\r\n\ Constructor\ -\ initialise\ the\ command\ words.\r\n
+comment1.params=
+comment1.target=java.lang.String\ getWord()
+comment2.params=word
+comment2.target=commands.CommandWord\ getForWord(java.lang.String)
+comment2.text=\r\n\ Used\ to\ create\ a\ command\ from\ the\ first\ word\ the\ user\ typed\ in.\r\n\r\n\ @param\ word\ -\ possible\ command\r\n\ @return\ UNKNOWN\ if\ given\ command\ is\ not\ known\r\n
+comment3.params=aString
+comment3.target=boolean\ isCommand(java.lang.String)
+comment3.text=\r\n\ Check\ whether\ a\ given\ String\ is\ a\ valid\ command\ word.\r\n\r\n\ @return\ true\ if\ a\ given\ string\ is\ a\ valid\ command,\r\n\ false\ if\ it\ isn't.\r\n
+numComments=4
