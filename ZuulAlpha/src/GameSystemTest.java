@@ -180,4 +180,18 @@ public class GameSystemTest {
         assertTrue(result.contains("It is an apple - it should taste good."));
         assertTrue(result.contains("It is some sort of a key."));
     }
+
+    @Test
+    public void goBackAtGameStart(){
+        String result = game.processCommand("back");
+        assertTrue(result.contains("the temple entrance"));
+    }
+
+    @Test
+    public void goBackToRoom(){
+        game.processCommand("go east");
+        String result = game.processCommand("back");
+        assertTrue(result.contains("the temple entrance"));
+
+    }
 }
