@@ -60,8 +60,7 @@ public class GameSystemTest {
         //when
         String output = game.processCommand("go south");
         //then
-        assertTrue("should be in computing lab" + output,
-                output.contains("this wall looks suspicious..."));
+        assertTrue(output.contains("at this wall - looks suspicious..."));
     }
 
     @Test

@@ -40,7 +40,7 @@ public class Game {
                 forrest, forrestEntrance, closedShops, trainStation, s45, hallway,
                 storageRoom, room_a, room_b, room_c;
         // create the rooms
-        templeEntrance = new Room("the temple entrance");
+        templeEntrance = new Room("at the temple entrance");
         secretRoom = new Room("at this wall - looks suspicious...");
         library = new Room("in the library");
         toilets = new Room("at the toilets");
