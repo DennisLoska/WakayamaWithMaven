@@ -22,10 +22,10 @@ public class CommandDrop extends Command {
 
     @Override
     public String processCommand(Command command) {
-
-        Item.getPlayerInventory().remove(getSecondWord());
-        state.getCurrentRoom().addItem(getSecondWord());
-        return "You dropped: " + getSecondWord();
+        state.getCurrentRoom().removeItem(item.getName());
+        Item.getPlayerInventory().put(item.getName(),item);
+        System.out.println(Item.getPlayerInventory().isEmpty());
+        return "You now have this: " + item.getDescribtion();
     }
 
 }

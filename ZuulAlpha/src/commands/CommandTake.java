@@ -22,9 +22,11 @@ public class CommandTake extends Command {
 
     @Override
     public String processCommand(Command command) {
-        state.getCurrentRoom().removeItem(item.getName());
-        Item.getPlayerInventory().put(item.getName(),item);
-        return "You now have this: " + item.getDescribtion();
+
+
+        state.getCurrentRoom().addItem(item.getName());
+        Item.getPlayerInventory().remove(item.getName());
+        return "You dropped: " + item.getDescribtion();
     }
 
 }
