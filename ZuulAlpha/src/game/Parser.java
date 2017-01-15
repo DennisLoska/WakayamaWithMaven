@@ -81,6 +81,8 @@ public class Parser {
                 return new CommandDrop(word1, word2);
             case "take":
                 return new CommandTake(word1, word2);
+            case "items":
+                return new CommandItems(word1, word2);
             default:
                 return new CommandUnknown(word1, word2);
         }

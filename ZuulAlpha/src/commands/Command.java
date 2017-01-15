@@ -2,6 +2,8 @@ package commands;
 
 import game.*;
 
+import java.util.Map;
+
 /**
  * This class is part of the "World of Zuul" application.
  * "World of Zuul" is a very simple, text based adventure game.
@@ -61,6 +63,15 @@ public abstract class Command {
         return (secondWord != null);
     }
 
+    public double countInventoryWeight(GameState state){
+        double inventoryWeight = 0;
+        for (Map.Entry<String, Item> entry : state.getPlayerInventory().entrySet()) {
+            String key = entry.getKey();
+            double value = entry.getValue().getWeight();
+            inventoryWeight += value;
+        }
+        return inventoryWeight;
+    }
     /**
      * Given a command, process (that is: execute) the command.
      *

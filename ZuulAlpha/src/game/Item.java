@@ -17,6 +17,7 @@ public class Item {
     private Item battery;
     private Item food;
     private Item flashlight;
+    final double MAXWEIGHT = 1.0;
 
     public Item() {
 
@@ -39,6 +40,12 @@ public class Item {
     public void setWeight(Double weight) {
         this.weight = weight;
     }
+
+
+    public double getMAXWEIGHT() {
+        return MAXWEIGHT;
+    }
+
 
     public String getDescribtion() {
         return describtion;

@@ -13,7 +13,7 @@ package commands;
 
 public enum CommandWord {
     GO("go"), QUIT("quit"), HELP("help"), UNKOWN("unknown"), EAT("eat"), LOOK("look"),
-    BACK("back"), TAKE("take"), DROP("drop");
+    BACK("back"), TAKE("take"), DROP("drop"), ITEMS("items");
 
     private String word;
 

@@ -15,6 +15,7 @@ public class GameState {
     private Room lastRoom;
     private Stack lastRooomStack = new Stack();
     private static GameState state;
+
     private HashMap<String, Item> playerInventory = new HashMap<String, Item>();
 
     private GameState(Room room) {
