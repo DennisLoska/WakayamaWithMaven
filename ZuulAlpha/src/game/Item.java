@@ -10,17 +10,17 @@ public class Item {
     private String describtion;
     private String name;
     private boolean canBePickedUp = true;
-    private static HashMap<String, Item> itemCollection = new HashMap<String, Item>();
-    private static HashMap<String, Item> playerInventory = new HashMap<String, Item>();
+    private HashMap<String, Item> itemCollection = new HashMap<String, Item>();
+    private HashMap<String, Item> playerInventory = new HashMap<String, Item>();
 
-    private static Item item = new Item();
-    private static Item scroll = new Item(0.3, "scroll", "There is a scroll.");
-    private static Item key = new Item(0.1, "key", "It is some sort of a key.");
-    private static Item apple = new Item(0.4, "apple", "It is an apple - it should taste good.");
-    private static Item defaultItem = new Item("");
-    private static Item battery = new ItemBattery(0.1, "battery", "a battery - can charge a flashlight");
-    private static Item food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
-    private static Item flashlight = new ItemFlashlight(1.3, "flashlight", "a flashlight to see in the dark", true);
+    private Item item = new Item();
+    private Item scroll = new Item(0.3, "scroll", "There is a scroll.");
+    private Item key = new Item(0.1, "key", "It is some sort of a key.");
+    private Item apple = new Item(0.4, "apple", "It is an apple - it should taste good.");
+    private Item defaultItem = new Item("");
+    private Item battery = new ItemBattery(0.1, "battery", "a battery - can charge a flashlight");
+    private Item food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
+    private Item flashlight = new ItemFlashlight(1.3, "flashlight", "a flashlight to see in the dark", true);
 
     public Item() {
 
@@ -64,7 +64,7 @@ public class Item {
         return itemCollection;
     }
 
-    public static HashMap<String, Item> getPlayerInventory() {
+    public HashMap<String, Item> getPlayerInventory() {
         return playerInventory;
     }
 
@@ -72,28 +72,28 @@ public class Item {
         return itemCollection.get("default");
     }
 
-    public static Item getBattery() {
+    public Item getBattery() {
         return battery;
     }
 
-    public static void setBattery(Item battery) {
-        Item.battery = battery;
+    public void setBattery(Item battery) {
+        this.battery = battery;
     }
 
-    public static Item getFood() {
+    public Item getFood() {
         return food;
     }
 
-    public static void setFood(Item food) {
-        Item.food = food;
+    public void setFood(Item food) {
+        this.food = food;
     }
 
-    public static Item getFlashLight() {
+    public Item getFlashLight() {
         return flashlight;
     }
 
-    public static void setFlashLight(Item flashLight) {
-        Item.flashlight = flashLight;
+    public void setFlashLight(Item flashLight) {
+        this.flashlight = flashLight;
     }
 
     public boolean isCanBePickedUp() {
@@ -114,7 +114,4 @@ public class Item {
         itemCollection.put("flashlight", flashlight);
     }
 
-    public static Item getInstance() {
-        return item;
-    }
 }
