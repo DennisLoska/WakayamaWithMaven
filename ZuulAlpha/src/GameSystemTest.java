@@ -171,7 +171,7 @@ public class GameSystemTest {
     }
 
     @Test
-    public void showItemDescriptions(){
+    public void showItemDescriptions() {
         game.processCommand("go east");
         //currentroom is now the library with 3 items in it
         String result = game.processCommand("look");
@@ -181,13 +181,13 @@ public class GameSystemTest {
     }
 
     @Test
-    public void goBackAtGameStart(){
+    public void goBackAtGameStart() {
         String result = game.processCommand("back");
         assertTrue(result.contains("at the temple entrance"));
     }
 
     @Test
-    public void goBackToRoom(){
+    public void goBackToRoom() {
         game.processCommand("go east");
         String result = game.processCommand("back");
         assertTrue(result.contains("the temple entrance"));

@@ -8,7 +8,7 @@ public class ItemFlashlight extends Item {
     private boolean charged = true;
 
     public ItemFlashlight(Double weight, String name, String describtion, Boolean charged) {
-       super(weight, name, describtion);
+        super(weight, name, describtion);
         this.charged = charged;
     }
 
@@ -20,7 +20,7 @@ public class ItemFlashlight extends Item {
         this.charged = charged;
     }
 
-    public void changeBatteries(ItemBattery battery){
+    public void changeBatteries(ItemBattery battery) {
         setCharged(true);
     }
 

@@ -24,10 +24,11 @@ public class Room {
     private HashMap<String, Item> roomItems = new HashMap<String, Item>();
     private static Item item;
 
-    public Room(Item itemStatic){
+    public Room(Item itemStatic) {
         item = itemStatic;
 
     }
+
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -154,12 +155,11 @@ public class Room {
     }
 
     /**
-     *
      * @return
      */
     public String getItemDescriptions() {
         String result = "";
-        for(Map.Entry<String, Item> entry : roomItems.entrySet()) {
+        for (Map.Entry<String, Item> entry : roomItems.entrySet()) {
             String key = entry.getKey();
             Item value = entry.getValue();
 
@@ -173,7 +173,6 @@ public class Room {
     }
 
     /**
-     *
      * @param key
      */
     public void addItem(String key) {
@@ -184,7 +183,7 @@ public class Room {
         roomItems.put(key, item);
     }
 
-    public void removeItem(String key){
+    public void removeItem(String key) {
         roomItems.remove(key);
     }
 

@@ -57,7 +57,7 @@ public class Parser {
         }
         // Now check whether this word is known. If so, create a command
         // with it. If not, create a "null" command (for unknown command).
-        if (word1 == null){
+        if (word1 == null) {
             word1 = " ";
         }
         switch (word1) {

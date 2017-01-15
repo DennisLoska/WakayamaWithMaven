@@ -18,7 +18,7 @@ public class CommandTake extends Command {
 
     @Override
     public String processCommand(Command command) {
-        state.getPlayerInventory().put(word2,state.getCurrentRoom().getRoomItems().get(word2));
+        state.getPlayerInventory().put(word2, state.getCurrentRoom().getRoomItems().get(word2));
         state.getCurrentRoom().removeItem(word2);
         return "You now have this: " + word2;
     }

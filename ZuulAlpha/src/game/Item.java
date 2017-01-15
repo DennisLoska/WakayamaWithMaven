@@ -108,7 +108,7 @@ public class Item {
         itemCollection.put("flashlight", flashlight);
     }
 
-    public void createItems(){
+    public void createItems() {
         scroll = new Item(0.3, "scroll", "There is a scroll.");
         key = new Item(0.1, "key", "It is some sort of a key.");
         apple = new Item(0.4, "apple", "It is an apple - it should taste good.");

@@ -18,7 +18,7 @@ public class CommandDrop extends Command {
 
     @Override
     public String processCommand(Command command) {
-        state.getCurrentRoom().getRoomItems().put(word2,state.getPlayerInventory().get(word2));
+        state.getCurrentRoom().getRoomItems().put(word2, state.getPlayerInventory().get(word2));
         state.getPlayerInventory().remove(word2);
         return "You dropped: " + word2;
     }
