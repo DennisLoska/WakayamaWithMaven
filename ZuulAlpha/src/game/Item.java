@@ -13,20 +13,19 @@ public class Item {
     private HashMap<String, Item> itemCollection = new HashMap<String, Item>();
     private HashMap<String, Item> playerInventory = new HashMap<String, Item>();
 
-    private Item item = new Item();
-    private Item scroll = new Item(0.3, "scroll", "There is a scroll.");
-    private Item key = new Item(0.1, "key", "It is some sort of a key.");
-    private Item apple = new Item(0.4, "apple", "It is an apple - it should taste good.");
-    private Item defaultItem = new Item("");
-    private Item battery = new ItemBattery(0.1, "battery", "a battery - can charge a flashlight");
-    private Item food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
-    private Item flashlight = new ItemFlashlight(1.3, "flashlight", "a flashlight to see in the dark", true);
+    private Item scroll;
+    private Item key;
+    private Item apple;
+    private Item defaultItem;
+    private Item battery;
+    private Item food;
+    private Item flashlight;
 
     public Item() {
 
     }
 
-    private Item(String describtion) {
+    public Item(String describtion) {
         this.describtion = describtion;
     }
 
@@ -112,6 +111,16 @@ public class Item {
         itemCollection.put("battery", battery);
         itemCollection.put("food", food);
         itemCollection.put("flashlight", flashlight);
+    }
+
+    public void createItems(){
+        scroll = new Item(0.3, "scroll", "There is a scroll.");
+        key = new Item(0.1, "key", "It is some sort of a key.");
+        apple = new Item(0.4, "apple", "It is an apple - it should taste good.");
+        defaultItem = new Item("");
+        battery = new ItemBattery(0.1, "battery", "a battery - can charge a flashlight");
+        food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
+        flashlight = new ItemFlashlight(1.3, "flashlight", "a flashlight to see in the dark", true);
     }
 
 }

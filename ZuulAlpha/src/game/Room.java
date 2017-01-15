@@ -22,7 +22,12 @@ public class Room {
     private String description;
     private HashMap<String, Room> exits = new HashMap<String, Room>();
     private HashMap<String, Item> roomItems = new HashMap<String, Item>();
+    private static Item item;
 
+    public Room(Item itemStatic){
+        item = itemStatic;
+
+    }
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -32,7 +37,77 @@ public class Room {
      */
     public Room(String description) {
         this.description = description;
-        Item.getInstance().fillCollection();
+    }
+
+    /**
+     * Create all the rooms and link their exits together.
+     */
+    public void createRooms(GameState state) {
+        Room templeEntrance, library, toilets, secretRoom, cellarHallway, atelier, bridge,
+                forrest, forrestEntrance, closedShops, trainStation, s45, hallway,
+                storageRoom, room_a, room_b, room_c;
+        // create the rooms
+        templeEntrance = new Room("at the temple entrance");
+        secretRoom = new Room("at this wall - looks suspicious...");
+        library = new Room("in the library");
+        toilets = new Room("at the toilets");
+        cellarHallway = new Room("in the cellar");
+        atelier = new Room("in the atelier");
+        bridge = new Room("at an abandoned bridge that looks spooky");
+        forrest = new Room("in the forrest");
+        forrestEntrance = new Room("at the forrest entrance");
+        closedShops = new Room("at some closed shops");
+        trainStation = new Room("at the train station");
+        s45 = new Room("in the s45");
+        hallway = new Room("in a hallway");
+        storageRoom = new Room("in the storage room");
+        room_a = new Room("in room a");
+        room_b = new Room("in room b");
+        room_c = new Room("in room c");
+        // initialise room exits
+        templeEntrance.setExits("east", library);
+        templeEntrance.setExits("west", toilets);
+        templeEntrance.setExits("south", secretRoom);
+        templeEntrance.setExits("north", bridge);
+        secretRoom.setExits("north", templeEntrance);
+        bridge.setExits("south", templeEntrance);
+        bridge.setExits("north", forrest);
+        forrest.setExits("south", bridge);
+        forrest.setExits("north", forrestEntrance);
+        forrestEntrance.setExits("south", forrest);
+        forrestEntrance.setExits("east", closedShops);
+        forrestEntrance.setExits("north", trainStation);
+        closedShops.setExits("west", forrestEntrance);
+        trainStation.setExits("south", forrestEntrance);
+        trainStation.setExits("north", s45);
+        s45.setExits("south", trainStation);
+        toilets.setExits("east", templeEntrance);
+        toilets.setExits("down", cellarHallway);
+        cellarHallway.setExits("up", toilets);
+        cellarHallway.setExits("east", atelier);
+        atelier.setExits("west", cellarHallway);
+        library.setExits("west", templeEntrance);
+        library.setExits("up", hallway);
+        hallway.setExits("down", library);
+        hallway.setExits("east", storageRoom);
+        storageRoom.setExits("west", hallway);
+        storageRoom.setExits("east", room_a);
+        room_a.setExits("north", room_c);
+        room_a.setExits("west", storageRoom);
+        room_a.setExits("south", room_b);
+        room_b.setExits("north", room_a);
+        room_c.setExits("south", room_a);
+        //adding items
+        library.addItem("scroll");
+        library.addItem("key");
+        library.addItem("apple");
+        atelier.addItem("scroll");
+        room_c.addItem("scroll");
+
+        //setting initial gamestate
+        state.setCurrentRoom(templeEntrance);  // start game inside the temple entrance
+        state.setLastRoom(templeEntrance);
+        state.getLastRooomStack().push(templeEntrance);
     }
 
     public HashMap<String, Item> getRoomItems() {
@@ -93,12 +168,16 @@ public class Room {
         return result;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
     /**
      *
      * @param key
      */
     public void addItem(String key) {
-        roomItems.put(key, Item.getInstance().getItemCollection().get(key));
+        roomItems.put(key, item.getItemCollection().get(key));
     }
 
     public void addItem(String key, Item item) {
