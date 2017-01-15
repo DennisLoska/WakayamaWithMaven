@@ -35,7 +35,6 @@ public class Game {
         state = GameState.getInstance();
         room.createRooms(state);
         parser = new Parser();
-
     }
 
     /**

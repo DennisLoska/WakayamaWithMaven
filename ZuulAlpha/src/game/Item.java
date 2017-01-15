@@ -11,7 +11,6 @@ public class Item {
     private String name;
     private boolean canBePickedUp = true;
     private HashMap<String, Item> itemCollection = new HashMap<String, Item>();
-
     private Item scroll;
     private Item key;
     private Item apple;
@@ -117,5 +116,4 @@ public class Item {
         food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
         flashlight = new ItemFlashlight(1.3, "flashlight", "a flashlight to see in the dark", true);
     }
-
 }
