@@ -1,5 +1,6 @@
 package game;
 
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -8,14 +9,20 @@ import java.util.Stack;
  */
 public class GameState {
     private String lastOutput;
+    private Room room;
     private Room nextRoom;
     private Room currentRoom;
     private Room lastRoom;
     private Stack lastRooomStack = new Stack();
     private static GameState state;
+    private HashMap<String, Item> playerInventory = new HashMap<String, Item>();
 
-    private GameState() {
+    private GameState(Room room) {
+        this.room = room;
+    }
 
+    public HashMap<String, Item> getPlayerInventory() {
+        return playerInventory;
     }
 
     public Stack getLastRooomStack() {
@@ -54,9 +61,9 @@ public class GameState {
         return state;
     }
 
-    public static void createGameState(){
+    public static void createGameState(Room room){
         if (state == null)
-            state = new GameState();
+            state = new GameState(room);
         else
         System.out.println("state is not null!");
     }

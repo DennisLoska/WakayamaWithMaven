@@ -9,18 +9,18 @@ import game.Item;
 public class CommandDrop extends Command {
 
     private GameState state;
-    private Item item;
+    String word2;
 
-    public CommandDrop(String word1, Item item) {
-        this.item=item;
+    public CommandDrop(String word1, String word2) {
         state = GameState.getInstance();
+        this.word2 = word2;
     }
 
     @Override
     public String processCommand(Command command) {
-        state.getCurrentRoom().addItem(getSecondWord(),item);
-        state.getCurrentRoom().getItem().getPlayerInventory().remove(getSecondWord());
-        return "You dropped: " + getSecondWord();
+        state.getCurrentRoom().getRoomItems().put(word2,state.getPlayerInventory().get(word2));
+        state.getPlayerInventory().remove(word2);
+        return "You dropped: " + word2;
     }
 
 }

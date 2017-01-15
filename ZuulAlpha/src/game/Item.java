@@ -11,7 +11,6 @@ public class Item {
     private String name;
     private boolean canBePickedUp = true;
     private HashMap<String, Item> itemCollection = new HashMap<String, Item>();
-    private HashMap<String, Item> playerInventory = new HashMap<String, Item>();
 
     private Item scroll;
     private Item key;
@@ -61,10 +60,6 @@ public class Item {
 
     public HashMap<String, Item> getItemCollection() {
         return itemCollection;
-    }
-
-    public HashMap<String, Item> getPlayerInventory() {
-        return playerInventory;
     }
 
     public Item getDefaultItem() {

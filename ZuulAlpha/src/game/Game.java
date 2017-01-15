@@ -27,12 +27,12 @@ public class Game {
      * Create the game and initialise its internal map.
      */
     public Game() {
-        GameState.createGameState();
-        state = GameState.getInstance();
         Item item = new Item();
         item.createItems();
         item.fillCollection();
         Room room = new Room(item);
+        GameState.createGameState(room);
+        state = GameState.getInstance();
         room.createRooms(state);
         parser = new Parser();
 

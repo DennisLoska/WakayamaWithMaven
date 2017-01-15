@@ -9,18 +9,18 @@ import game.Item;
 public class CommandTake extends Command {
 
     private GameState state;
-    private Item item;
+    private String word2;
 
-    public CommandTake(String word1, Item item) {
-        this.item=item;
+    public CommandTake(String word1, String word2) {
         state = GameState.getInstance();
+        this.word2 = word2;
     }
 
     @Override
     public String processCommand(Command command) {
-        state.getCurrentRoom().removeItem(getSecondWord());
-        state.getCurrentRoom().getItem().getPlayerInventory().put(item.getName(),item);
-        return "You now have this: " + item.getName();
+        state.getPlayerInventory().put(word2,state.getCurrentRoom().getRoomItems().get(word2));
+        state.getCurrentRoom().removeItem(word2);
+        return "You now have this: " + word2;
     }
 
 }
