@@ -11,10 +11,6 @@ public class CommandTake extends Command {
     private GameState state;
     private Item item;
 
-    public CommandTake() {
-
-    }
-
     public CommandTake(String word1, Item item) {
         this.item=item;
         state = GameState.getInstance();
@@ -22,11 +18,9 @@ public class CommandTake extends Command {
 
     @Override
     public String processCommand(Command command) {
-
-
-        state.getCurrentRoom().addItem(item.getName());
-        Item.getPlayerInventory().remove(item.getName());
-        return "You dropped: " + item.getDescribtion();
+        state.getCurrentRoom().removeItem(getSecondWord());
+        Item.getPlayerInventory().put(item.getName(),item);
+        return "You now have this: " + item.getName();
     }
 
 }

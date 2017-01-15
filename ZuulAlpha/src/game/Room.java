@@ -101,8 +101,12 @@ public class Room {
         roomItems.put(key, Item.getInstance().getItemCollection().get(key));
     }
 
+    public void addItem(String key, Item item) {
+        roomItems.put(key, item);
+    }
+
     public void removeItem(String key){
-        roomItems.remove(key, Item.getInstance().getItemCollection().get(key));
+        roomItems.remove(key);
     }
 
 }

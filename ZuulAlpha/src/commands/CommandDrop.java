@@ -11,10 +11,6 @@ public class CommandDrop extends Command {
     private GameState state;
     private Item item;
 
-    public CommandDrop() {
-
-    }
-
     public CommandDrop(String word1, Item item) {
         this.item=item;
         state = GameState.getInstance();
@@ -22,10 +18,9 @@ public class CommandDrop extends Command {
 
     @Override
     public String processCommand(Command command) {
-        state.getCurrentRoom().removeItem(item.getName());
-        Item.getPlayerInventory().put(item.getName(),item);
-        System.out.println(Item.getPlayerInventory().isEmpty());
-        return "You now have this: " + item.getDescribtion();
+        state.getCurrentRoom().addItem(getSecondWord(),item);
+        Item.getPlayerInventory().remove(getSecondWord());
+        return "You dropped: " + getSecondWord();
     }
 
 }
