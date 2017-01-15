@@ -108,9 +108,9 @@ public class Item {
     }
 
     public void createItems() {
-        scroll = new Item(0.3, "scroll", "There is a scroll.");
+        scroll = new Item(0.4, "scroll", "There is a scroll.");
         key = new Item(0.1, "key", "It is some sort of a key.");
-        apple = new Item(0.4, "apple", "It is an apple - it should taste good.");
+        apple = new Item(0.6, "apple", "It is an apple - it should taste good.");
         defaultItem = new Item("");
         battery = new ItemBattery(0.1, "battery", "a battery - can charge a flashlight");
         food = new ItemFood(0.8, "food", "some food to eat", "deleicous");
