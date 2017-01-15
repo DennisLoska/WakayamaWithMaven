@@ -23,7 +23,7 @@ public class CommandItems extends Command {
         for (Map.Entry<String, Item> entry : state.getPlayerInventory().entrySet()) {
             String key = entry.getKey();
             Item value = entry.getValue();
-            result += value.getName() + " weight: " + value.getWeight() + "\n" ;
+            result += value.getName() + " weight: " + value.getWeight() + "\n";
             totalWeight += value.getWeight();
         }
         return result += " total weight: " + totalWeight + " / " + state.getCurrentRoom().getItem().getMAXWEIGHT();

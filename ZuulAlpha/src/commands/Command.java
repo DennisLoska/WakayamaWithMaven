@@ -63,7 +63,7 @@ public abstract class Command {
         return (secondWord != null);
     }
 
-    public double countInventoryWeight(GameState state){
+    public double countInventoryWeight(GameState state) {
         double inventoryWeight = 0;
         for (Map.Entry<String, Item> entry : state.getPlayerInventory().entrySet()) {
             String key = entry.getKey();
@@ -72,6 +72,7 @@ public abstract class Command {
         }
         return inventoryWeight;
     }
+
     /**
      * Given a command, process (that is: execute) the command.
      *
