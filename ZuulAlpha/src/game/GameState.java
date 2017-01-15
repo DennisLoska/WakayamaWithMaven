@@ -64,7 +64,6 @@ public class GameState {
     public static void createGameState(Room room) {
         if (state == null)
             state = new GameState(room);
-        else
-            System.out.println("state is not null!");
+
     }
 }
