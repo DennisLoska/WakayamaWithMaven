@@ -55,10 +55,10 @@ public class Parser {
                 // note: we just ignore the rest of the input line.
             }
         }
-        return checkCommand(word1,word2);
+        return checkCommand(word1, word2);
     }
 
-    private Command checkCommand(String word1, String word2){
+    private Command checkCommand(String word1, String word2) {
         // Now check whether this word is known. If so, create a command
         // with it. If not, create a "null" command (for unknown command).
         if (word1 == null) {

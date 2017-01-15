@@ -9,7 +9,6 @@ public class Item {
     private Double weight;
     private String describtion;
     private String name;
-    private boolean canBePickedUp = true;
     private HashMap<String, Item> itemCollection = new HashMap<String, Item>();
     private Item scroll;
     private Item key;
@@ -87,14 +86,6 @@ public class Item {
 
     public void setFlashLight(Item flashLight) {
         this.flashlight = flashLight;
-    }
-
-    public boolean isCanBePickedUp() {
-        return canBePickedUp;
-    }
-
-    public void setCanBePickedUp(boolean canBePickedUp) {
-        this.canBePickedUp = canBePickedUp;
     }
 
     public void fillCollection() {
