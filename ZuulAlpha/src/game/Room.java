@@ -21,7 +21,7 @@ import java.util.Map;
 public class Room {
     private String description;
     private HashMap<String, Room> exits = new HashMap<String, Room>();
-    private static HashMap<String, Item> roomItems = new HashMap<String, Item>();
+    private HashMap<String, Item> roomItems = new HashMap<String, Item>();
 
     /**
      * Create a room described "description". Initially, it has
@@ -40,7 +40,7 @@ public class Room {
     }
 
     public void setRoomItems(HashMap<String, Item> roomItems) {
-        Room.roomItems = roomItems;
+        roomItems = roomItems;
     }
 
     /**

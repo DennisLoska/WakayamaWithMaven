@@ -27,6 +27,7 @@ public class Game {
      * Create the game and initialise its internal map.
      */
     public Game() {
+        GameState.createGameState();
         state = GameState.getInstance();
         createRooms();
         parser = new Parser();

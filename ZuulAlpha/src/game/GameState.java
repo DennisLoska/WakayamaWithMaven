@@ -12,7 +12,7 @@ public class GameState {
     private Room currentRoom;
     private Room lastRoom;
     private Stack lastRooomStack = new Stack();
-    private static GameState state = new GameState();
+    private static GameState state;
 
     private GameState() {
 
@@ -52,5 +52,12 @@ public class GameState {
 
     public static GameState getInstance() {
         return state;
+    }
+
+    public static void createGameState(){
+        if (state == null)
+            state = new GameState();
+        else
+        System.out.println("state is not null!");
     }
 }
