@@ -22,11 +22,9 @@ public class Room {
     private String description;
     private HashMap<String, Room> exits = new HashMap<String, Room>();
     private HashMap<String, Item> roomItems = new HashMap<String, Item>();
-    private static Item item;
+    private ItemCollection item;
 
-    public Room(Item itemStatic) {
-        item = itemStatic;
-
+    public Room() {
     }
 
     /**
@@ -99,11 +97,14 @@ public class Room {
         room_b.setExits("north", room_a);
         room_c.setExits("south", room_a);
         //adding items
-        library.addItem("scroll");
-        library.addItem("key");
-        library.addItem("apple");
-        atelier.addItem("scroll");
-        room_c.addItem("scroll");
+        item = new ItemCollection();
+        item.createItems();
+        item.fillCollection();
+        library.addItem("scroll", item);
+        library.addItem("key", item);
+        library.addItem("apple", item);
+        atelier.addItem("scroll", item);
+        room_c.addItem("scroll", item);
 
         //setting initial gamestate
         state.setCurrentRoom(templeEntrance);  // start game inside the temple entrance
@@ -163,19 +164,19 @@ public class Room {
             String key = entry.getKey();
             Item value = entry.getValue();
 
-            result += value.getDescribtion() + "\n";
+            result += value.getDescription() + "\n";
         }
         return result;
     }
 
-    public Item getItem() {
+    public ItemCollection getItem() {
         return item;
     }
 
     /**
-     * @param key
+     *
      */
-    public void addItem(String key) {
+    public void addItem(String key, ItemCollection item) {
         roomItems.put(key, item.getItemCollection().get(key));
     }
 

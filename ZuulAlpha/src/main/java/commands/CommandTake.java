@@ -20,7 +20,7 @@ public class CommandTake extends Command {
 
     @Override
     public String processCommand(Command command) {
-        if (state.getCurrentRoom().getRoomItems().get(word2) != null && canPick() == true) {
+        if (state.getCurrentRoom().getRoomItems().get(word2) != null && canPick()) {
             state.getPlayerInventory().put(word2, state.getCurrentRoom().getRoomItems().get(word2));
             state.getCurrentRoom().removeItem(word2);
             return "You now have this: " + word2 + " , weight: " + state.getPlayerInventory().get(word2).getWeight();
@@ -30,7 +30,7 @@ public class CommandTake extends Command {
     public boolean canPick() {
         if (state.getPlayerInventory().isEmpty()) return true;
         double inventoryWeight = countInventoryWeight(state);
-        double maxWeight = state.getCurrentRoom().getItem().getMAXWEIGHT();
+        double maxWeight = Item.getMAXWEIGHT();
         inventoryWeight += state.getCurrentRoom().getRoomItems().get(word2).getWeight();
         System.out.println("Your inventory: " + inventoryWeight + " / " + maxWeight);
         if (inventoryWeight <= maxWeight) return true;

@@ -26,6 +26,6 @@ public class CommandItems extends Command {
             result += value.getName() + " weight: " + value.getWeight() + "\n";
             totalWeight += value.getWeight();
         }
-        return result += " total weight: " + totalWeight + " / " + state.getCurrentRoom().getItem().getMAXWEIGHT();
+        return result += " total weight: " + totalWeight + " / " + Item.getMAXWEIGHT();
     }
 }
