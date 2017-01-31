@@ -174,7 +174,7 @@ public class Room {
     }
 
     /**
-     *
+     * @param key
      */
     public void addItem(String key, ItemCollection item) {
         roomItems.put(key, item.getItemCollection().get(key));
