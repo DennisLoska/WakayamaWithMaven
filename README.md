@@ -1,5 +1,5 @@
 # wakayama_withMaven
-##Now with Maven!
+## Now with Maven!
 
 This version of the project Wakayama now comes with Maven-support.
 
